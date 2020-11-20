@@ -64,8 +64,8 @@ describe('Store Card', () => {
     const facilitiesDiv = wrapper.find({ ref: 'facilities' });
     expect(facilitiesDiv.exists()).toBe(true);
 
-    const faculitiesDivList = facilitiesDiv.findAll('div.faculity-icon');
-    expect(facilitiesDivList.length).toBe(3);
+    const faculitiesDivList = facilitiesDiv.findAll('.faculity-item');
+    expect(faculitiesDivList.length).toBe(3);
   });
 
   test('can display store price level 1?', () => {
@@ -77,7 +77,7 @@ describe('Store Card', () => {
 
     const priceLevelDiv = wrapper.find({ ref: 'price-level' });
     expect(priceLevelDiv.exists()).toBe(true);
-    expect(priceLevelDiv.text()).toBe('฿฿฿฿');
+    expect(priceLevelDiv.text()).toBe('฿ ฿ ฿ ฿');
 
     const priceChars = priceLevelDiv.findAll('span');
     expect(priceChars.length).toBe(4);
@@ -93,7 +93,7 @@ describe('Store Card', () => {
 
     const priceLevelDiv = wrapper.find({ ref: 'price-level' });
     expect(priceLevelDiv.exists()).toBe(true);
-    expect(priceLevelDiv.text()).toBe('฿฿฿฿');
+    expect(priceLevelDiv.text()).toBe('฿ ฿ ฿ ฿');
 
     const priceChars = priceLevelDiv.findAll('span');
     expect(priceChars.length).toBe(4);
@@ -110,7 +110,7 @@ describe('Store Card', () => {
 
     const priceLevelDiv = wrapper.find({ ref: 'price-level' });
     expect(priceLevelDiv.exists()).toBe(true);
-    expect(priceLevelDiv.text()).toBe('฿฿฿฿');
+    expect(priceLevelDiv.text()).toBe('฿ ฿ ฿ ฿');
 
     const priceChars = priceLevelDiv.findAll('span');
     expect(priceChars.length).toBe(4);
@@ -128,7 +128,7 @@ describe('Store Card', () => {
 
     const priceLevelDiv = wrapper.find({ ref: 'price-level' });
     expect(priceLevelDiv.exists()).toBe(true);
-    expect(priceLevelDiv.text()).toBe('฿฿฿฿');
+    expect(priceLevelDiv.text()).toBe('฿ ฿ ฿ ฿');
 
     const priceChars = priceLevelDiv.findAll('span');
     expect(priceChars.length).toBe(4);
@@ -145,7 +145,7 @@ describe('Store Card', () => {
       },
     });
 
-    const openStateDiv = wrapper.find({ ref: 'open-state' });
+    const openStateDiv = wrapper.find({ ref: 'open-state' }).find('span');
     expect(openStateDiv.exists()).toBe(true);
     expect(openStateDiv.text()).toBe('เปิดอยู่');
     expect(openStateDiv.classes()).toContain('active');
@@ -158,7 +158,7 @@ describe('Store Card', () => {
       },
     });
 
-    const openStateDiv = wrapper.find({ ref: 'open-state' });
+    const openStateDiv = wrapper.find({ ref: 'open-state' }).find('span');
     expect(openStateDiv.exists()).toBe(true);
     expect(openStateDiv.text()).toBe('ปิดอยู่');
     expect(openStateDiv.classes()).not.toContain('active');
@@ -171,7 +171,7 @@ describe('Store Card', () => {
       },
     });
 
-    const openStateDiv = wrapper.find({ ref: 'open-state' });
+    const openStateDiv = wrapper.find({ ref: 'open-state' }).find('span');
     expect(openStateDiv.exists()).not.toBe(true);
   });
 
@@ -185,21 +185,21 @@ describe('Store Card', () => {
 
     const highlightDiv = wrapper.find({ ref: 'highlight-text' });
     expect(highlightDiv.exists()).toBe(true);
-    expect(highlightDiv.html()).toBe(highlightText);
+    expect(highlightDiv.html()).toContain(highlightText);
   });
 
   test('can display store recommended items?', () => {
     const recommendItems = ['A', 'B', 'C'];
     const wrapper = mount(StoreCard, {
       propsData: {
-        store: { recommendItems: recommendItems },
+        store: { recommendedItems: recommendItems },
       },
     });
 
     const recommendDiv = wrapper.find({ ref: 'recommends' });
     expect(recommendDiv.exists()).toBe(true);
 
-    const recommendDivList = recommendDiv.findAll('div');
+    const recommendDivList = recommendDiv.findAll('.recommend-item');
     expect(recommendDivList.length).toBe(3);
   });
 
