@@ -44,7 +44,7 @@ describe('Store Card', () => {
     const storeSubCategoryName = 'test subcategory';
     const wrapper = mount(StoreCard, {
       propsData: {
-        store: { categoryName: storeSubCategoryName },
+        store: { subcategoryName: storeSubCategoryName },
       },
     });
 
