@@ -12,7 +12,7 @@
 
       <div class="card-line subline">
         <span>
-          <span ref="category-name">{{ store.categoryName }}</span>
+          <!-- <span ref="category-name">{{ store.categoryName }}</span> -->
           <span ref="subcategory-name">{{ store.subcategoryName }}</span>
         </span>
         <div ref="price-level" class="price">

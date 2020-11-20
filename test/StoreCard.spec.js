@@ -27,18 +27,18 @@ describe('Store Card', () => {
     expect(img.attributes('src')).toBe(storeImage);
   });
 
-  test('can display store category?', () => {
-    const storeCategoryName = 'test category';
-    const wrapper = mount(StoreCard, {
-      propsData: {
-        store: { categoryName: storeCategoryName },
-      },
-    });
+  // test('can display store category?', () => {
+  //   const storeCategoryName = 'test category';
+  //   const wrapper = mount(StoreCard, {
+  //     propsData: {
+  //       store: { categoryName: storeCategoryName },
+  //     },
+  //   });
 
-    const categoryDiv = wrapper.find({ ref: 'category-name' });
-    expect(categoryDiv.exists()).toBe(true);
-    expect(categoryDiv.text()).toContain(storeCategoryName);
-  });
+  //   const categoryDiv = wrapper.find({ ref: 'category-name' });
+  //   expect(categoryDiv.exists()).toBe(true);
+  //   expect(categoryDiv.text()).toContain(storeCategoryName);
+  // });
 
   test('can display store subcategory?', () => {
     const storeSubCategoryName = 'test subcategory';
