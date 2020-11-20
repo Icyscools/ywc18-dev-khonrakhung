@@ -47,7 +47,15 @@
       <div class="card-line" ref="facilities">
         <div class="flex justify-start">
           <div v-for="(facility, index) in store.facilities" :key="index">
-            <div class="faculity-item">{{ facility }}</div>
+            <div class="faculity-item">
+              <img v-if="facility == 'ที่จอดรถ'" src="~/assets/icons/ที่จอดรถ.png" />
+              <img v-else-if="facility == 'บริการจัดส่งอาหาร'" src="~/assets/icons/บริการจัดส่งอาหาร.png" />
+              <img v-else-if="facility == 'รับจองล่วงหน้า'" src="~/assets/icons/รับจองล่วงหน้า.png" />
+              <img
+                v-else-if="facility == 'สามารถนำสัตว์เลี้ยงเข้าได้'"
+                src="~/assets/icons/สามารถนำสัตว์เลี้ยงเข้าได้.png"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -140,5 +148,16 @@ export default {
 
 .price .active {
   @apply text-gray-800;
+}
+
+.faculity-item {
+  @apply rounded-full bg-white border-green-400 border flex justify-center items-center mr-2;
+  width: 30px;
+  height: 30px;
+}
+
+.faculity-item img {
+  width: 19px;
+  height: auto;
 }
 </style>
