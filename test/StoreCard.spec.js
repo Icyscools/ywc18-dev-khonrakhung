@@ -6,7 +6,7 @@ describe('Store Card', () => {
     const storeName = 'test store';
     const wrapper = mount(StoreCard, {
       propsData: {
-        shopNameTH: storeName,
+        store: { shopNameTH: storeName },
       },
     });
 
@@ -18,7 +18,7 @@ describe('Store Card', () => {
     const storeImage = 'https://picsum.photos/200';
     const wrapper = mount(StoreCard, {
       propsData: {
-        coverImageId: storeImage,
+        store: { coverImageId: storeImage },
       },
     });
 
@@ -31,7 +31,7 @@ describe('Store Card', () => {
     const storeCategoryName = 'test category';
     const wrapper = mount(StoreCard, {
       propsData: {
-        categoryName: storeCategoryName,
+        store: { categoryName: storeCategoryName },
       },
     });
 
@@ -44,7 +44,7 @@ describe('Store Card', () => {
     const storeSubCategoryName = 'test subcategory';
     const wrapper = mount(StoreCard, {
       propsData: {
-        categoryName: storeSubCategoryName,
+        store: { categoryName: storeSubCategoryName },
       },
     });
 
@@ -57,7 +57,7 @@ describe('Store Card', () => {
     const storeFacilities = ['Test facilities 1', 'Test facilities 2', 'Test facilities 3'];
     const wrapper = mount(StoreCard, {
       propsData: {
-        facilities: storeFacilities,
+        store: { facilities: storeFacilities },
       },
     });
 
@@ -71,23 +71,7 @@ describe('Store Card', () => {
   test('can display store price level 1?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        priceLevel: 1,
-      },
-    });
-
-    const priceLevelDiv = wrapper.find({ ref: 'price-level' });
-    expect(priceLevelDiv.exists()).toBe(true);
-    expect(priceLevelDiv.text()).toBe('฿฿฿฿');
-
-    const priceChars = priceLevelDiv.findAll('span');
-    expect(priceChars.length).toBe(4);
-    expect(priceChars.at(0).classes()).toContain('active');
-  });
-
-  test('can display store price level 1?', () => {
-    const wrapper = mount(StoreCard, {
-      propsData: {
-        priceLevel: 1,
+        store: { priceLevel: 1 },
       },
     });
 
@@ -103,7 +87,7 @@ describe('Store Card', () => {
   test('can display store price level 2?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        priceLevel: 2,
+        store: { priceLevel: 2 },
       },
     });
 
@@ -120,7 +104,7 @@ describe('Store Card', () => {
   test('can display store price level 3?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        priceLevel: 3,
+        store: { priceLevel: 3 },
       },
     });
 
@@ -138,7 +122,7 @@ describe('Store Card', () => {
   test('can display store price level 4?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        priceLevel: 3,
+        store: { priceLevel: 4 },
       },
     });
 
@@ -157,7 +141,7 @@ describe('Store Card', () => {
   test('can display store open state?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        isOpen: 'Y',
+        store: { isOpen: 'Y' },
       },
     });
 
@@ -170,7 +154,7 @@ describe('Store Card', () => {
   test('can display store close state?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        isOpen: 'N',
+        store: { isOpen: 'N' },
       },
     });
 
@@ -183,7 +167,7 @@ describe('Store Card', () => {
   test('can not display store N/A state?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        isOpen: 'N/A',
+        store: { isOpen: 'N/A' },
       },
     });
 
@@ -195,7 +179,7 @@ describe('Store Card', () => {
     const highlightText = '<strong>Test strong</strong> and <i>italic</i>';
     const wrapper = mount(StoreCard, {
       propsData: {
-        highlightText: highlightText,
+        store: { highlightText: highlightText },
       },
     });
 
@@ -208,7 +192,7 @@ describe('Store Card', () => {
     const recommendItems = ['A', 'B', 'C'];
     const wrapper = mount(StoreCard, {
       propsData: {
-        recommendItems: recommendItems,
+        store: { recommendItems: recommendItems },
       },
     });
 
@@ -223,7 +207,7 @@ describe('Store Card', () => {
     const addressProvinceName = 'test province';
     const wrapper = mount(StoreCard, {
       propsData: {
-        addressProvinceName: addressProvinceName,
+        store: { addressProvinceName: addressProvinceName },
       },
     });
 
@@ -236,7 +220,7 @@ describe('Store Card', () => {
     const addressDistrictName = 'test district';
     const wrapper = mount(StoreCard, {
       propsData: {
-        addressDistrictName: addressDistrictName,
+        store: { addressDistrictName: addressDistrictName },
       },
     });
 
@@ -248,18 +232,20 @@ describe('Store Card', () => {
   test('can display dummy data correctly?', () => {
     const wrapper = mount(StoreCard, {
       propsData: {
-        shopNameTH: 'Kanysorn Cafe',
-        categoryName: 'งานบริการอื่นๆ / เบ็ดเตล็ด',
-        subcategoryName: 'สินค้า และ บริการ เกี่ยวกับการตกแต่งบ้าน',
-        coverImageId:
-          'https://images.unsplash.com/photo-1597227772909-a6d166b48b79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-        facilities: ['ที่จอดรถ'],
-        priceLevel: 1,
-        isOpen: 'Y',
-        highlightText: '<strong>ร้านทุกอย่าง</strong> โต๊ะ ตู้ เตียง',
-        recommendedItems: ['แจกัน', 'จานชาม', 'เก้าอี้สามขา'],
-        addressProvinceName: 'กรุงเทพมหานคร',
-        addressDistrictName: 'เขตธนบุรี',
+        store: {
+          shopNameTH: 'Kanysorn Cafe',
+          categoryName: 'งานบริการอื่นๆ / เบ็ดเตล็ด',
+          subcategoryName: 'สินค้า และ บริการ เกี่ยวกับการตกแต่งบ้าน',
+          coverImageId:
+            'https://images.unsplash.com/photo-1597227772909-a6d166b48b79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+          facilities: ['ที่จอดรถ'],
+          priceLevel: 1,
+          isOpen: 'Y',
+          highlightText: '<strong>ร้านทุกอย่าง</strong> โต๊ะ ตู้ เตียง',
+          recommendedItems: ['แจกัน', 'จานชาม', 'เก้าอี้สามขา'],
+          addressProvinceName: 'กรุงเทพมหานคร',
+          addressDistrictName: 'เขตธนบุรี',
+        },
       },
     });
 
