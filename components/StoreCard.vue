@@ -151,13 +151,13 @@ export default {
 }
 
 .faculity-item {
-  @apply rounded-full bg-white border-green-400 border flex justify-center items-center mr-2;
+  @apply rounded-full bg-white border-green-400 border flex justify-center items-center mr-2 mt-5;
   width: 30px;
   height: 30px;
 }
 
 .faculity-item img {
-  width: 19px;
+  width: 18px;
   height: auto;
 }
 </style>
