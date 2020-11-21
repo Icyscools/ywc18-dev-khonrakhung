@@ -48,12 +48,17 @@
         <div class="flex justify-start">
           <div v-for="(facility, index) in store.facilities" :key="index">
             <div class="faculity-item">
-              <img v-if="facility == 'ที่จอดรถ'" src="~/assets/icons/ที่จอดรถ.png" />
-              <img v-else-if="facility == 'บริการจัดส่งอาหาร'" src="~/assets/icons/บริการจัดส่งอาหาร.png" />
-              <img v-else-if="facility == 'รับจองล่วงหน้า'" src="~/assets/icons/รับจองล่วงหน้า.png" />
+              <img v-if="facility == 'ที่จอดรถ'" src="~/assets/icons/ที่จอดรถ.png" :title="facility" />
+              <img
+                v-else-if="facility == 'บริการจัดส่งอาหาร'"
+                src="~/assets/icons/บริการจัดส่งอาหาร.png"
+                :title="facility"
+              />
+              <img v-else-if="facility == 'รับจองล่วงหน้า'" src="~/assets/icons/รับจองล่วงหน้า.png" :title="facility" />
               <img
                 v-else-if="facility == 'สามารถนำสัตว์เลี้ยงเข้าได้'"
                 src="~/assets/icons/สามารถนำสัตว์เลี้ยงเข้าได้.png"
+                :title="facility"
               />
             </div>
           </div>
