@@ -3,7 +3,7 @@
   "short_name": "ywc18-dev-khonrakhung",
   "description": "## Build Setup",
   "icons": [],
-  "start_url": "/?standalone=true",
+  "start_url": "/ywc18-dev-khonrakhung/?standalone=true",
   "display": "standalone",
   "background_color": "#ffffff",
   "lang": "en"
