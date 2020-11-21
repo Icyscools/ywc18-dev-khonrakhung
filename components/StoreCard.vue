@@ -1,5 +1,5 @@
 <template>
-  <div class="container mb-3">
+  <div class="container mb-3 bg-white">
     <img :src="store.coverImageId" class="image-block" ref="cover-img" />
     <div class="py-3 px-5 text-left">
       <div class="card-line headline">
