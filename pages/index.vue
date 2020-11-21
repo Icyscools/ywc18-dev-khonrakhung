@@ -2,8 +2,8 @@
   <div class="app">
     <div class="bar p-2">
       <div class="container">
-        <img src="~/assets/logo-mini.png" class="block md:hidden h-full w-auto" />
-        <img src="~/assets/logo.png" class="hidden md:block h-full w-auto" />
+        <img src="/logo-mini.png" class="block md:hidden h-full w-auto" />
+        <img src="/logo.png" class="hidden md:block h-full w-auto" />
         <input
           v-model="filter.merchantName"
           class="rounded w-3/4 p-2 border border-1 border-gray-400 ml-3"
